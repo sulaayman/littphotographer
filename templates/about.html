@@ -1,0 +1,232 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load thumbnail %}
+{% block link %}
+{#    <link rel="stylesheet" type="text/css" href="{% static 'js/jquery.fluidbox/fluidbox.css' %}">#}
+{#    <link rel="stylesheet" type="text/css" href="{% static 'js/owl-carousel/owl.carousel.css' %}">#}
+{#    <link rel="stylesheet" type="text/css" href="{% static 'js/jquery.magnific-popup/magnific-popup.css' %}">#}
+
+{% endblock %}
+{% block content %}
+    <!-- layout-full -->
+    <div class="layout-full">
+
+        <!-- .hentry -->
+        <article class="hentry">
+
+
+            <!-- .entry-header -->
+            <header class="entry-header">
+                <h1 class="entry-title">ABOUT ME</h1>
+            </header>
+            <!-- .entry-header -->
+
+
+            <!-- .entry-content -->
+            <div class="entry-content">
+                {% for member in teams %}
+                    {% if forloop.first %}
+                <div class="row">
+                <div class="col-md-6">
+                    <div class="full-width-image">
+                        {% thumbnail member.image "400x400" crop="center" as im %}
+                                    <img src="{{ im.url }}" width="{{ im.width }}" height="{{ im.height }}" alt="">
+                                {% endthumbnail %}
+{#                        <img src="{{ member.image.url }}" alt="profile photo">#}
+                    </div>
+                </div>
+
+                <div class="col-md-6">
+                    <h2 class="section-title center">WHO IS THIS GUY?</h2>
+                    <h2 class="comments-title">{{ member.name }} <span class=" pull-right" style="display: block; font-size: 30px; color: #ccc; font-weight: 400; text-transform: uppercase;">{{ member.title }}</span></h2>
+
+
+
+                <p class="drop-cap">{{ member.message }}</p>
+
+                </div>
+            </div>
+                                       <h2 class="section-title center">TEAM</h2>
+{#                        <div class="row">#}
+                        {% else %}
+
+
+
+
+        <!-- .row -->
+
+                    <div class="col-sm-4">
+
+
+
+
+
+                        <!-- Testimonial -->
+                        <div class="testo">
+                            <img src="{{member.image.url}}" alt="someone">
+                            <h4>{{member.name}}
+                                <span>{{member.title}}</span>
+                            </h4>
+                            <p>{{ member.message }}</p>
+
+                        </div>
+                    </div>
+{#        </div>#}
+                    {% endif %}
+
+{% endfor %}
+            <div class="row"></div>
+
+
+
+
+                <h2 class="section-title center">I am a social guy</h2>
+                <!-- SOCIAL -->
+                <ul class="social">
+                    <li><a class="facebook" href="#"></a></li>
+                    <li><a class="twitter" href="#"></a></li>
+                    <li><a class="linkedin" href="#"></a></li>
+                    <li><a class="google-plus" href="#"></a></li>
+                    <li><a class="pinterest" href="#"></a></li>
+                    <li><a class="github" href="#"></a></li>
+                    <li><a class="behance" href="#"></a></li>
+                    <li><a class="dribbble" href="#"></a></li>
+                    <li><a class="instagram" href="#"></a></li>
+                    <li><a class="lastfm" href="#"></a></li>
+                    <li><a class="vine" href="#"></a></li>
+                    <li><a class="rss" href="#"></a></li>
+                    <li><a class="vimeo" href="#"></a></li>
+                    <li><a class="forrst" href="#"></a></li>
+                    <li><a class="skype" href="#"></a></li>
+                    <li><a class="picasa" href="#"></a></li>
+                    <li><a class="youtube" href="#"></a></li>
+                    <li><a class="flickr" href="#"></a></li>
+                    <li><a class="tumblr" href="#"></a></li>
+                    <li><a class="blogger" href="#"></a></li>
+                    <li><a class="delicious" href="#"></a></li>
+                    <li><a class="digg" href="#"></a></li>
+                    <li><a class="friendfeed" href="#"></a></li>
+                    <li><a class="wordpress" href="#"></a></li>
+                    <li><a class="stack-overflow" href="#"></a></li>
+                    <li><a class="foursquare" href="#"></a></li>
+                    <li><a class="xing" href="#"></a></li>
+                    <li><a class="weibo" href="#"></a></li>
+                    <li><a class="soundcloud" href="#"></a></li>
+                    <li><a class="fivehundredpx" href="#"></a></li>
+                    <li><a class="slideshare" href="#"></a></li>
+                    <li><a class="vkontakte" href="#"></a></li>
+                </ul>
+                <!-- SOCIAL -->
+
+
+                <h2 class="section-title center">FUN FACT</h2>
+
+                <!-- row -->
+                <div class="row">
+
+                    <!-- column 3/12 -->
+                    <div class="col-xs-6 col-sm-4 col-md-2">
+
+                        <!-- fun-fact -->
+                        <div class="fun-fact">
+                            <i class="pw-icon-smiley"></i>
+                            <h4>400+ HAPPY CLIENTS</h4>
+                        </div>
+                        <!-- fun-fact -->
+
+                    </div>
+                    <!-- column 3/12 -->
+
+                    <!-- column 3/12 -->
+                    <div class="col-xs-6 col-sm-4 col-md-2">
+
+                        <!-- fun-fact -->
+                        <div class="fun-fact">
+                            <i class="pw-icon-adult"></i>
+                            <h4>5000 PORTRAIT SHOOTS</h4>
+                        </div>
+                        <!-- fun-fact -->
+
+                    </div>
+                    <!-- column 3/12 -->
+
+                    <!-- column 3/12 -->
+                    <div class="col-xs-6 col-sm-4 col-md-2">
+
+                        <!-- fun-fact -->
+                        <div class="fun-fact">
+                            <i class="pw-icon-tree"></i>
+                            <h4>10000 NATURE SHOOTS</h4>
+                        </div>
+                        <!-- fun-fact -->
+
+                    </div>
+                    <!-- column 3/12 -->
+
+                    <!-- column 3/12 -->
+                    <div class="col-xs-6 col-sm-4 col-md-2">
+
+                        <!-- fun-fact -->
+                        <div class="fun-fact">
+                            <i class="pw-icon-camera-outline"></i>
+                            <h4>70000 SHOTS CAPTURED</h4>
+                        </div>
+                        <!-- fun-fact -->
+
+                    </div>
+                    <!-- column 3/12 -->
+
+                    <!-- column 3/12 -->
+                    <div class="col-xs-6 col-sm-4 col-md-2">
+
+                        <!-- fun-fact -->
+                        <div class="fun-fact">
+                            <i class="pw-icon-location-outline"></i>
+                            <h4>72 COUNTRIES VISITED</h4>
+                        </div>
+                        <!-- fun-fact -->
+
+                    </div>
+                    <!-- column 3/12 -->
+
+                    <!-- column 3/12 -->
+                    <div class="col-xs-6 col-sm-4 col-md-2">
+
+                        <!-- fun-fact -->
+                        <div class="fun-fact">
+                            <i class="pw-icon-coffee"></i>
+                            <h4>1200 COFFEE DRINKED</h4>
+                        </div>
+                        <!-- fun-fact -->
+
+                    </div>
+                    <!-- column 3/12 -->
+
+                </div>
+                <!-- row -->
+
+
+            </div>
+            <!-- .entry-content -->
+
+
+        </article>
+        <!-- .hentry -->
+
+        <hr>
+
+
+    </div>
+{% endblock %}
+
+{% block script %}
+
+{#    <script src="{% static 'js/fastclick.js' %}"></script>#}
+{#    <script src="{% static 'js/imagesloaded.pkgd.min.js' %}"></script>#}
+{#    <script src="{% static 'js/owl-carousel/owl.carousel.min.js' %}"></script>#}
+{#    <script src="{% static 'js/jquery.collagePlus/jquery.collagePlus.min.js' %}"></script>#}
+{#    <script src="{% static 'js/jquery.magnific-popup/jquery.magnific-popup.min.js' %}"></script>#}
+{#    <script src="{% static 'js/main.js' %}"></script>#}
+{#    <script src="{% static 'js/jquery.fluidbox/jquery.fluidbox.min.js' %}"></script>#}
+
+{% endblock %}

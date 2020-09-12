@@ -1,0 +1,82 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load thumbnail %}
+{% block link %}
+    <link rel="stylesheet" type="text/css" href="{% static 'js/jquery.fluidbox/fluidbox.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'js/owl-carousel/owl.carousel.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'js/jquery.magnific-popup/magnific-popup.css' %}">
+
+{% endblock %}
+{% block content %}
+    <!-- layout-full -->
+    <div class="layout-full">
+        <!-- .gallery-single -->
+        <div class="gallery-single">
+
+            <!-- entry-header -->
+            <header class="entry-header">
+                <h1 class="entry-title">Category</h1>
+            </header>
+            <!-- entry-header -->
+
+            <!-- .media-grid-wrap -->
+            <div class="media-grid-wrap">
+
+                <div class="gallery-grid">
+                    <!-- gallery-item -->
+                    {% for cat,img in zipped %}
+                        <div class="masonry-item ">
+                            <figure>
+                                {% thumbnail img.image "400x450" crop="center" as im %}
+                                    <img src="{{ im.url }}" width="{{ im.width }}" height="{{ im.height }}"
+                                         alt="category-post">
+                                {% endthumbnail %}
+                                {#                                        <img src="{{ img.image.url }}" alt="gallery-post"/>#}
+                                <figcaption>
+                                    <h2>{{ cat.name }}</h2>
+                                    <p>Lily likes to play with crayons and pencils</p>
+                                    <a href="{% url 'core:category_detail' cat.name %}"></a>
+                                </figcaption>
+                            </figure>
+                        </div>
+                    {% endfor %}
+                    <!-- gallery-item -->
+                </div>
+
+                <!-- .pw-gallery -->
+                <div class="mfp-gallery pw-collage pw-collage-loading" data-row-height="360"
+                     data-mobile-row-height="120" data-effect="effect-4">
+
+                    {% for cat,img in zipped2 %}
+
+                        <a href="{{ img.image.url }}"
+                           title="Portrait of a young man, studio shooting.">
+                            <img src="{{ img.image.url }}" alt="image"/>
+                        </a>
+                        <h2 style="color: #00BF8F; font-family: 'Roboto Light',serif">{{ cat.name }}</h2>
+                        <a href="{% url 'core:album_detail' cat.name %}">View more</a>
+
+                    {% endfor %}
+
+                </div>
+                <!-- .pw-gallery -->
+
+            </div>
+            <!-- .media-grid-wrap -->
+
+        </div>
+        <!-- .gallery-single -->
+    </div>
+{% endblock %}
+
+{% block script %}
+
+    <script src="{% static 'js/fastclick.js' %}"></script>
+    <script src="{% static 'js/imagesloaded.pkgd.min.js' %}"></script>
+    <script src="{% static 'js/owl-carousel/owl.carousel.min.js' %}"></script>
+    <script src="{% static 'js/jquery.collagePlus/jquery.collagePlus.min.js' %}"></script>
+    <script src="{% static 'js/jquery.magnific-popup/jquery.magnific-popup.min.js' %}"></script>
+    <script src="{% static 'js/main.js' %}"></script>
+    <script src="{% static 'js/jquery.fluidbox/jquery.fluidbox.min.js' %}"></script>
+
+{% endblock %}

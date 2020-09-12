@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+
+{% load static %}
+{% load instagram_client %}
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Title -->
+    <title>Litt</title>
+
+    <!-- Favicon -->
+    {% comment %} <link rel="" href="{% static 'alime/img/core-img/favicon.ico'%}"> {% endcomment %}
+    <link rel="apple-touch-icon" sizes="180x180" href="{% static 'alime/img/core-img/apple-touch-icon.png' %}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{% static 'alime/img/core-img/favicon-32x32.png' %}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{% static 'alime/img/core-img/favicon-16x16.png' %}">
+    <link rel="manifest" href="{% static 'alime/img/core-img/site.webmanifest' %}">
+
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="{% static 'alime/style.css' %}">
+
+    <link href="{% static 'alime/vendors/linericon/style.css' %}" rel="stylesheet">
+    {#    <link href="{% static 'alime/css/bootstrap.min.css'%}" rel="stylesheet">#}
+    <link href="{% static 'alime/vendors/linericon/style.css' %}" rel="stylesheet">
+    <link href="{% static 'alime/css/font-awesome.min.css' %}" rel="stylesheet">
+    <link href="{% static 'alime/vendors/owl-carousel/owl.carousel.min.css' %}" rel="stylesheet">
+    <link href="{% static 'alime/vendors/lightbox/simpleLightbox.css' %}" rel="stylesheet">
+    <link href="{% static 'alime/vendors/nice-select/css/nice-select.css' %}" rel="stylesheet">
+    <link href="{% static 'alime/vendors/animate-css/animate.css' %}" rel="stylesheet">
+    <link href="{% static 'alime/vendors/jquery-ui/jquery-ui.css' %}" rel="stylesheet">
+    <!-- main css -->
+    {#    <link href="{% static 'alime/css/style.css' %}" rel="stylesheet">#}
+    {#    <link href="{% static 'alime/css/responsive.css' %}" rel="stylesheet">#}
+
+
+    <link href="{% static 'alime/vendors/mdi-font/css/material-design-iconic-font.min.css' %}" media="all" rel="stylesheet">
+    <link href="{% static 'alime/vendors/font-awesome-4.7/css/font-awesome.min.css' %}" media="all" rel="stylesheet">
+    <!-- Font special for pages-->
+    <!-- Vendor CSS-->
+    <link href="{% static 'alime/vendors/select2/select2.min.css' %}" media="all" rel="stylesheet">
+    <link href="{% static 'alime/vendors/datepicker/daterangepicker.css' %}" media="all" rel="stylesheet">
+
+    <!-- Main CSS-->
+    {#    <link href="{% static 'alime/css/main.css' %}" media="all" rel="stylesheet">#}
+    <script crossorigin="anonymous" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+            src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+
+</head>
+
+
+<body>
+<!-- Preloader -->
+<div id="preloader">
+    <div class="loader"></div>
+</div>
+<!-- /Preloader -->
+
+<!-- Top Search Form Area -->
+<div class="top-search-area">
+    <div class="modal fade" id="searchModal" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <!-- Close -->
+                    <button type="button" class="btn close-btn" data-dismiss="modal"><i class="ti-close"></i></button>
+                    <!-- Form -->
+                    <form action="" method="post">
+                        <input type="search" name="top-search-bar" class="form-control"
+                               placeholder="Search and hit enter...">
+                        <button type="submit">Search</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Header Area Start -->
+<header class="header-area">
+    <!-- Main Header Start -->
+    <div class="main-header-area">
+        <div class="classy-nav-container breakpoint-off">
+            <div class="container">
+                <!-- Classy Menu -->
+                <nav class="classy-navbar justify-content-between" id="alimeNav">
+
+                    <!-- Logo -->
+                    <a class="nav-brand" href=""><img src="{% static 'alime/img/core-img/1litt-2.png' %}"
+                                                                       alt=""></a>
+
+                    <!-- Navbar Toggler -->
+                    <div class="classy-navbar-toggler">
+                        <span class="navbarToggler"><span></span><span></span><span></span></span>
+                    </div>
+
+                    <!-- Menu -->
+                    <div class="classy-menu">
+                        <!-- Menu Close Button -->
+                        <div class="classycloseIcon">
+                            <div class="cross-wrap"><span class="top"></span><span class="bottom"></span></div>
+                        </div>
+                        <!-- Nav Start -->
+                        <div class="classynav">
+                            <ul id="nav" class="p mx-auto">
+                                <li class="" data-filter=".{% url 'core:home' %}"><a href="{% url 'core:home' %}">Home</a>
+                                </li>
+{#                                <li class="active"><a href="{% url 'about' %}">About</a></li>#}
+                                <li class=""><a href="{% url 'core:home' %}">Gallery</a></li>
+                                {% comment %} <li><a href="./blog.html">Blog</a></li> {% endcomment %}
+                                <li class=""><a href="{% url 'core:home' %}">Contact</a></li>
+                            </ul>
+
+                            <!-- Search Icon -->
+                            {#                                <div class="search-icon" data-toggle="modal" data-target="#searchModal"><i class="ti-search"></i></div>#}
+                            <ul class="mr-auto float-right">
+{#                                <li><a href="{% url 'upload' %}">upload</a></li>#}
+                            </ul>
+                        </div>
+                        <!-- Nav End -->
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </div>
+</header>
+<!-- Header Area End -->
+
+{% block content %}
+
+{% endblock %}
+
+<section class="follow-area clearfix">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="section-heading text-center">
+                    <h2>Follow Instagram</h2>
+                    <a href="https://www.instagram.com/thelittphotographer/" target="_blank">@thelittphotographer</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Instagram Feed Area -->
+    <div class="instragram-feed-area owl-carousel">
+        <!-- Single Instagram Item -->
+        {% instagram_user_recent_media thelittphotographer %}
+        {% for media in recent_media %}
+            <div class="single-instagram-item">
+                <img src="{{ media.thumbnail_src }}"/>
+                <div class="instagram-hover-content text-center d-flex align-items-center justify-content-center">
+                    <a href="//instagram.com/p/{{ media.shortcode }}" target="_blank">
+                        <i class="ti-instagram" aria-hidden="true"></i>
+                        <span>thelittphotographer</span>
+                    </a>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+</section>
+
+<!-- Footer Area Start -->
+<footer class="footer-area">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="footer-content d-flex align-items-center justify-content-between">
+                    <!-- Copywrite Text -->
+                     <div class="copywrite-text">
+                     <p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                     Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+                     <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
+                     </div>
+
+                    <!-- Social Info -->
+                    <div class="social-info">
+                        <a href="#"><i class="ti-facebook" aria-hidden="true"></i></a>
+                        <a href="#"><i class="ti-twitter-alt" aria-hidden="true"></i></a>
+                        <a href="#"><i class="ti-linkedin" aria-hidden="true"></i></a>
+                        <a href="https://www.instagram.com/thelittphotographer/"><i class="ti-instagram"
+                                                                                    aria-hidden="true"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+<!-- Footer Area End -->
+
+<!-- **** All JS Files ***** -->
+<!-- jQuery 2.2.4 -->
+<script src="{% static 'alime/js/jquery.min.js' %}"></script>
+<!-- Popper -->
+<script src="{% static 'alime/js/popper.min.js' %}"></script>
+<!-- Bootstrap -->
+<script src="{% static 'alime/js/bootstrap.min.js' %}"></script>
+<!-- All Plugins -->
+<script src="{% static 'alime/js/alime.bundle.js' %}"></script>
+<!-- Active -->
+<script src="{% static 'alime/js/default-assets/active.js' %}"></script>
+
+<script src="{% static 'alime/vendors/lightbox/simpleLightbox.min.js' %}"></script>
+<script src="{% static 'alime/vendors/nice-select/js/jquery.nice-select.min.js' %}"></script>
+<script src="{% static 'alime/vendors/isotope/imagesloaded.pkgd.min.js' %}"></script>
+<script src="{% static 'alime/vendors/isotope/isotope-min.js' %}"></script>
+<script src="{% static 'alime/vendors/owl-carousel/owl.carousel.min.js' %}"></script>
+<script src="{% static 'alime/vendors/jquery-ui/jquery-ui.js' %}"></script>
+{% comment %} <script src="{% static 'alime/js/jquery.ajaxchimp.min.js' %}"></script>
+<script src="{% static 'alime/js/mail-script.js' %}"></script>
+<script src="{% static 'alime/js/theme.js' %}"></script>
+<script src="{% static 'alime/scripts/main.js.js' %}"></script> {% endcomment %}
+
+
+<script src="{% static 'alime/vendors/jquery/jquery.min.js' %}"></script>
+<!--&lt;!&ndash; Vendor JS&ndash;&gt;-->
+<script src="{% static 'alime/vendors/select2/select2.min.js' %}"></script>
+<script src="{% static 'alime/vendors/datepicker/moment.min.js' %}"></script>
+<script src="{% static 'alime/vendors/datepicker/daterangepicker.js' %}"></script>
+
+
+<!-- Main JS-->
+<script src="{% static 'alime/js/global.js' %}"></script>
+
+
+</body>
+
+</html>

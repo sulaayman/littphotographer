@@ -1,0 +1,164 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load thumbnail %}
+{% block title %}
+Portfolio
+{% endblock %}
+{% block link %}
+{#    <link rel="stylesheet" type="text/css" href="{% static 'js/jquery.fluidbox/fluidbox.css' %}">#}
+{#<link rel="stylesheet" type="text/css" href="{% static 'js/owl-carousel/owl.carousel.css' %}">#}
+{#<link rel="stylesheet" type="text/css" href="{% static 'js/photo-swipe/photoswipe.css' %}">#}
+{#<link rel="stylesheet" type="text/css" href="{% static 'js/photo-swipe/default-skin/default-skin.css' %}">#}
+{#<link rel="stylesheet" type="text/css" href="{% static 'js/jquery.magnific-popup/magnific-popup.css' %}">#}
+{#<link rel="stylesheet" type="text/css" href="{% static 'js/slippry/slippry.css' %}">#}
+
+{% endblock %}
+{% block content %}
+    <div class="layout-full">
+
+
+
+
+        <hr>
+
+        <!-- .gallery-single -->
+        <div class="gallery-single">
+
+
+            <!-- entry-header -->
+            <header class="entry-header">
+                <h1 class="entry-title">CATEGORY</h1>
+            </header>
+            <!-- entry-header -->
+
+
+            <!-- .media-grid-wrap -->
+            <div class="media-grid-wrap">
+
+                <!-- .pw-gallery -->
+{#                <div class="mfp-gallery pw-collage pw-collage-loading" data-row-height="360"#}
+{#                     data-mobile-row-height="120" data-effect="effect-4">#}
+
+                    <div class="gallery-grid">
+
+
+                        {% for cat,img in zipped %}
+
+                            <!-- gallery-item -->
+                            <div class="masonry-item">
+                                <figure>
+                                    {% thumbnail img.image "500x500" crop="center" as im %}
+                                    <img src="{{ im.url }}" width="{{ im.width }}" height="{{ im.height }}" alt="category-post">
+                                {% endthumbnail %}
+                                    <figcaption>
+                                        <h2 style="color: #0f6674">{{ cat.name }}</h2>
+                                        <a href="{% url 'core:category_detail' cat.slug %}">View more</a>
+                                    </figcaption>
+                                </figure>
+                            </div>
+                            <!-- gallery-item -->
+                        {% endfor %}
+
+
+                    </div>
+
+                    <!-- .pw-gallery -->
+
+                <!-- .media-grid-wrap -->
+
+            </div>
+            <!-- .gallery-single -->
+
+         <nav class="nav-single row">
+&nbsp;&nbsp;&nbsp;
+                    <div class="nav-next col-xs-6">
+                        <h4>VIEW MORE</h4>
+                        <a href="{% url 'core:category' %}" rel="next">CATEGORY <span
+                                class="meta-nav">→</span></a>
+                    </div>
+
+                </nav>
+
+            <!-- InstanceEndEditable -->
+
+        </div>
+        <hr>
+    <div class="gallery-single">
+
+
+            <!-- entry-header -->
+            <header class="entry-header">
+                <h1 class="entry-title">ALBUM</h1>
+            </header>
+            <!-- entry-header -->
+
+
+            <!-- .media-grid-wrap -->
+            <div class="media-grid-wrap">
+
+                <!-- .pw-gallery -->
+{#                <div class="mfp-gallery pw-collage pw-collage-loading" data-row-height="360"#}
+{#                     data-mobile-row-height="120" data-effect="effect-4">#}
+
+                    <div class="gallery-grid">
+
+
+                        {% for al,img in zipped2 %}
+
+                            <!-- gallery-item -->
+                            <div class="masonry-item">
+                                <figure>
+                                    {% thumbnail img.image "400x450" crop="center" as im %}
+                                    <img src="{{ im.url }}" width="{{ im.width }}" height="{{ im.height }}" alt="category-post">
+                                {% endthumbnail %}
+                                    {#                                        {% for foo in t %}#}
+{#                                    <img src="{{ img.image.url }}" alt="gallery-post"/>#}
+                                    {#                                        {% endfor %}#}
+                                    <figcaption>
+                                        <h2 style="color: #0f6674; font-family: 'Roboto Light',serif">{{ al.name }}</h2>
+                                        <a href="{% url 'core:album_detail' al.slug %}">View more</a>
+                                    </figcaption>
+                                </figure>
+                            </div>
+                            <!-- gallery-item -->
+                        {% endfor %}
+
+
+                    </div>
+
+                    <!-- .pw-gallery -->
+
+                <!-- .media-grid-wrap -->
+
+            </div>
+            <!-- .gallery-single -->
+    <nav class="nav-single row">
+&nbsp;&nbsp;&nbsp;
+                    <div class="nav-next col-xs-6 pull-left">
+                        <h4>VIEW MORE </h4>
+                        <a href="{% url 'core:album' %}" rel="next">ALBUM <span
+                                class="meta-nav">→</span></a>
+                    </div>
+
+                </nav>
+
+
+            <!-- InstanceEndEditable -->
+
+
+        </div>
+
+    </div>
+{% endblock %}
+
+{% block script %}
+
+{#    <script src="{% static 'js/fastclick.js' %}"></script>#}
+{#    <script src="{% static 'js/imagesloaded.pkgd.min.js' %}"></script>#}
+{#    <script src="{% static 'js/owl-carousel/owl.carousel.min.js' %}"></script>#}
+{#    <script src="{% static 'js/jquery.collagePlus/jquery.collagePlus.min.js' %}"></script>#}
+{#    <script src="{% static 'js/jquery.magnific-popup/jquery.magnific-popup.min.js' %}"></script>#}
+{#    <script src="{% static 'js/main.js' %}"></script>#}
+{#    <script src="{% static 'js/jquery.fluidbox/jquery.fluidbox.min.js' %}"></script>#}
+
+{% endblock %}

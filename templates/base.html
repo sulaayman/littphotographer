@@ -1,0 +1,278 @@
+<!doctype html>
+{% load static %}
+{% load instagram_client %}
+<html class="" lang="">
+<!-- InstanceBegin template="/Templates/page-full-width.dwt" codeOutsideHTMLIsLocked="false" -->
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title> THE LITT PHOTOGRAPHER{% block title %}
+
+    {% endblock %}</title>
+
+    <!-- FAV and TOUCH ICONS -->
+    <link rel="shortcut icon" href="{% static 'images/ico/favicon.ico' %}">
+    <link rel="apple-touch-icon" href="{% static 'logo.png' %}"/>
+
+    <!-- FONTS -->
+    <link rel="stylesheet" type="text/css" href="{% static 'css/fonts/montserrat/montserrat.css' %}">
+    <link href='http://fonts.googleapis.com/css?family=Roboto:400,400italic,700,700italic' rel='stylesheet'
+          type='text/css'>
+
+    <!-- STYLES -->
+
+    <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.min.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/fonts/fontello/css/fontello.css' %}">
+
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slippry/1.4.0/slippry.min.css"
+          integrity="sha512-T+a5Aa01HOiiskCpZYtRZu69nfOIyhjrDn0PRClEQTDKZ16pcdvaU7KD1m0NrQIKn6LqUzY8tgLsfOVGiJs2Rg=="
+          crossorigin="anonymous"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fluidbox/2.0.5/css/fluidbox.min.css"
+          integrity="sha512-1gVXQF5Q9gL1HvHBLK0y3IAWCorLY9EU+JMTsLBlXgWfgf6EIS/8B27R/nUq1joeKz2N7ZHCNnLCjc+PuqDqDA=="
+          crossorigin="anonymous"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.css"
+          integrity="sha512-UTNP5BXLIptsaj5WdKFrkFov94lDx+eBvbKyoe1YAfjeRPC+gT5kyZ10kOHCfNZqEui1sxmqvodNUx3KbuYI/A=="
+          crossorigin="anonymous"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.3/photoswipe.min.css"
+          integrity="sha512-yxWNfGm+7EK+hqP2CMJ13hsUNCQfHmOuCuLmOq2+uv/AVQtFAjlAJO8bHzpYGQnBghULqnPuY8NEr7f5exR3Qw=="
+          crossorigin="anonymous"/>
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.3/default-skin/default-skin.min.css"
+          integrity="sha512-Rck8F2HFBjAQpszOB9Qy+NVLeIy4vUOMB7xrp46edxB3KXs2RxXRguHfrJqNK+vJ+CkfvcGqAKMJTyWYBiBsGA=="
+          crossorigin="anonymous"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.min.css"
+          integrity="sha512-+EoPw+Fiwh6eSeRK7zwIKG2MA8i3rV/DGa3tdttQGgWyatG/SkncT53KHQaS5Jh9MNOT3dmFL0FjTY08And/Cw=="
+          crossorigin="anonymous"/>
+
+
+    <!-- INITIAL SCRIPTS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"
+            integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg=="
+            crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"
+            integrity="sha512-3n19xznO0ubPpSwYCRRBgHh63DrV+bdZfHK52b1esvId4GsfwStQNPJFjeQos2h3JwCmZl0/LgLxSKMAI55hgw=="
+            crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-migrate/1.2.1/jquery-migrate.min.js"
+            integrity="sha512-fDGBclS3HUysEBIKooKWFDEWWORoA20n60OwY7OSYgxGEew9s7NgDaPkj7gqQcVXnASPvZAiFW8DiytstdlGtQ=="
+            crossorigin="anonymous"></script>
+
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons">
+    <link rel="stylesheet"
+          href="https://unpkg.com/bootstrap-material-design@4.1.1/dist/css/bootstrap-material-design.min.css"
+          integrity="sha384-wXznGJNEXNG1NFsbm0ugrLFMQPWswR3lds2VeinahP8N0zJw9VWSopbjv2x7WCvX" crossorigin="anonymous">
+
+
+    <link rel="stylesheet" type="text/css" href="{% static 'css/768.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/992.css' %}">
+
+
+    <!-- InstanceBeginEditable name="head" -->
+    <!-- InstanceEndEditable -->
+
+
+</head>
+
+<body>
+
+<!-- page -->
+<div id="page" class="hfeed site">
+
+    <!-- header -->
+    <header id="masthead" class="site-header" role="banner">
+
+
+        <!-- site-logo -->
+        <div class="site-logo">
+
+
+            <!-- logo : image -->
+            <h1 class="site-title">
+                <a href="{% url 'core:home' %}" rel="home">
+                    <img src="{% static 'logo black.png' %}" alt="logo">
+                </a>
+            </h1>
+            <!-- logo : image -->
+
+        </div>
+        <!-- site-logo -->
+
+
+        <!-- site-navigation -->
+        <nav id="primary-navigation" class="site-navigation primary-navigation" role="navigation">
+
+            <a class="menu-toggle"><span class="lines"></span></a>
+
+            <!-- nav-menu -->
+            <div class="nav-menu">
+                <ul>
+                    <li>
+                        <a href="{% url 'core:home' %}">HOME</a>
+                    </li>
+                    <li>
+                        <a href="{% url 'core:portfolio' %}">PORTFOLIO</a>
+                    </li>
+                    <li><a href="{% url 'core:price' %}">PRICING</a></li>
+                    <li><a href="{% url 'core:about' %}">ABOUT ME</a>
+                        <!-- level 2 -->
+                        <!-- level 2 -->
+                    </li>
+                    <li><a href="{% url 'core:contact' %}">CONTACT</a></li>
+                </ul>
+            </div>
+            <!-- nav-menu -->
+
+        </nav>
+        <!-- site-navigation -->
+
+
+    </header>
+    <!-- header -->
+
+
+    <!-- site-main -->
+    <div id="main" class="site-main">
+
+
+        <!-- primary -->
+        <div id="primary" class="content-area">
+
+            <!-- site-content -->
+            <div id="content" class="site-content" role="main">
+
+                <!-- layout-full -->
+                {% block content %}
+
+                {% endblock %}
+                <!-- layout-full -->
+
+            </div>
+            <!-- site-content -->
+
+        </div>
+        <!-- primary -->
+
+
+    </div>
+    <!-- site-main -->
+
+    <br>
+    <div class="container">
+        <div class="site-footer">
+            <hr style="font-weight: 100">
+
+
+            <div class="owl-carousel owl-loading" data-items="5" data-loop="true" data-center="true"
+                 data-mouse-drag="true" data-nav="true" data-dots="false" data-autoplay="true"
+                 data-autoplay-speed="500" data-autoplay-timeout="3000">
+                {#                data-nav-text-prev="prev"#}
+                {#                 data-nav-text-next="next">#}
+{#                <span class="entry-title">thelittphotographer Instagram Feed</span>#}
+                                {% instagram_user_recent_media thelittphotographer %}
+                                {% for media in recent_media %}
+                                    <div>
+                                        <a href="//instagram.com/p/{{ media.shortcode }}" target="_blank">
+                                            <i class="instagram"></i>
+                                            <img src="{{ media.thumbnail_src }}" alt="slide">
+                                        </a>
+                                    </div>
+                                {% endfor %}
+
+            </div>
+
+        </div>
+    </div>
+
+    <!-- site-footer -->
+    <footer id="colophon" class="site-footer" role="contentinfo">
+
+        <!-- layout-medium -->
+        <div class="layout-medium">
+
+            <!-- footer-social -->
+            <div class="footer-social">
+
+                <ul class="social">
+                    <li><a class="facebook" href="#"></a></li>
+                    <li><a class="twitter" href="#"></a></li>
+                    <li><a class="instagram" href="//instagram.com/p/thelittphotographer"></a></li>
+                </ul>
+
+            </div>
+            <!-- footer-social -->
+
+
+            <!-- .site-info -->
+            <div class="site-info">
+
+                <p>Copyright &copy;
+                    <script>document.write(new Date().getFullYear());</script>
+                    Bob Smith
+                </p>
+
+            </div>
+            <!-- .site-info -->
+
+
+        </div>
+        <!-- layout-medium -->
+
+
+    </footer>
+    <!-- site-footer -->
+
+
+</div>
+<!-- page -->
+<div class="offset"></div>
+<!-- /.container -->
+
+<!-- SCRIPTS -->
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fluidbox/2.0.5/js/jquery.fluidbox.min.js"
+        integrity="sha512-0kQqdmb3fpKtRwrbCZDlmiwuZgDyPAOLDOu/HyAt4py7lAVDXKknqtqS6dFNV8U8JrHZymQxlO9SFPZ2u8dhMw=="
+        crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/owl-carousel/1.3.3/owl.carousel.js"
+        integrity="sha512-IUpSKpPKlXuPokiYONEZUG/H4c1rw4VmbGdnBKB18qm/9jbnxQ4Rv5Da9qEmB3hIa3k4DxRNoZfB6FTpERnuOQ=="
+        crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"
+        integrity="sha512-bPs7Ae6pVvhOSiIcyUClR7/q2OAsRiovw4vAkX+zJbw3ShAeeqezq50RIIcIURq7Oa20rW2n2q+fyXBNcU9lrw=="
+        crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.3/photoswipe.min.js"
+        integrity="sha512-2R4VJGamBudpzC1NTaSkusXP7QkiUYvEKhpJAxeVCqLDsgW4OqtzorZGpulE3eEA7p++U0ZYmqBwO3m+R2hRjA=="
+        crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.3/photoswipe-ui-default.min.js"
+        integrity="sha512-SxO0cwfxj/QhgX1SgpmUr0U2l5304ezGVhc0AO2YwOQ/C8O67ynyTorMKGjVv1fJnPQgjdxRz6x70MY9r0sKtQ=="
+        crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js"
+        integrity="sha512-IsNh5E3eYy3tr/JiX2Yx4vsCujtkhwl7SLqgnwLNgf04Hrt9BT9SXlLlZlWx+OK4ndzAoALhsMNcCmkggjZB1w=="
+        crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/slippry/1.4.0/slippry.min.js"
+        integrity="sha512-AuA2kbI9ByrbsuXrrdqY8qlayz6cFSwLl7qvLBQSMJIWJ5YFjBRKrtVWD3NKWZHOcxqpnqYJtcLaZARXxR+Kjg=="
+        crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/collageplus/0.3.3/jquery.collagePlus.min.js"
+        integrity="sha512-dZbysZg9ikJMFBQALYbNeY3YIfKLjavLCtoiKve+NhUFDjVU5YqhT4KsiSLaPKRy4p7QuneQhXH2Mzb+R8KwQw=="
+        crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/4.1.4/imagesloaded.pkgd.min.js"
+        integrity="sha512-S5PZ9GxJZO16tT9r3WJp/Safn31eu8uWrzglMahDT4dsmgqWonRY9grk3j+3tfuPr9WJNsfooOR7Gi7HL5W2jw=="
+        crossorigin="anonymous"></script>
+
+<script src="https://unpkg.com/popper.js@1.12.6/dist/umd/popper.js"
+        integrity="sha384-fA23ZRQ3G/J53mElWqVJEGJzU0sTs+SvzG8fXVWP+kJQ1lwFAOkcUOysnlKJC33U"
+        crossorigin="anonymous"></script>
+<script src="https://unpkg.com/bootstrap-material-design@4.1.1/dist/js/bootstrap-material-design.js"
+        integrity="sha384-CauSuKpEqAFajSpkdjv3z9t8E7RlpJ1UP0lKM/+NdtSarroVKu069AlsRPKkFBz9"
+        crossorigin="anonymous"></script>
+
+<script src="{% static 'js/main.js' %}"></script>
+
+
+</body>
+<!-- InstanceEnd -->
+</html>

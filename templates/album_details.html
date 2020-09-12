@@ -1,0 +1,109 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load thumbnail %}
+{% block link %}
+{#    <link rel="stylesheet" type="text/css" href="{% static 'js/jquery.fluidbox/fluidbox.css' %}">#}
+{#<link rel="stylesheet" type="text/css" href="{% static 'js/owl-carousel/owl.carousel.css' %}">#}
+{#<link rel="stylesheet" type="text/css" href="{% static 'js/photo-swipe/photoswipe.css' %}">#}
+{#<link rel="stylesheet" type="text/css" href="{% static 'js/photo-swipe/default-skin/default-skin.css' %}">#}
+{#<link rel="stylesheet" type="text/css" href="{% static 'js/jquery.magnific-popup/magnific-popup.css' %}">#}
+{#<link rel="stylesheet" type="text/css" href="{% static 'js/slippry/slippry.css' %}">#}
+
+{#    <link rel="stylesheet" type="text/css" href="{% static 'css/768.css' %}">#}
+{#    <link rel="stylesheet" type="text/css" href="{% static 'css/992.css' %}">#}
+{% endblock %}
+{% block content %}
+    <!-- layout-full -->
+    <div class="layout-full">
+    <div class="row">
+        <div class="home-wrap">
+
+
+                            <!-- ken-slider -->
+                            <ul class="ken-slider" data-speed="5000" data-animation="kenburns">
+                                {% for foo in x %}
+                                <li>
+                                	<img src="{{foo.image.url}}" alt="image">
+                                </li>
+                                {% endfor %}
+
+                            </ul>
+							<!-- ken-slider -->
+
+
+                            <!-- intro -->
+                            <div class="intro">
+
+                                <h2 class="entry-title text-uppercase " style="color: white; font-family: 'Roboto Light',cursive">
+
+                                    {{ title }}<br>
+                                </h2>
+
+                            </div>
+                            <!-- intro -->
+
+
+                        </div>
+    </div>
+        <br>
+        <hr>
+
+     <div class="row">
+        <div class="container " style=" border-radius: 100px">
+        <div class="gallery-single">
+
+
+            <!-- entry-header -->
+{#            <header class="entry-header">#}
+{#                <h1 class="entry-title text-uppercase text-info" style="font-family: 'Roboto Light',cursive">{{ title }}#}
+{#                    album</h1>#}
+{#            </header>#}
+            <!-- entry-header -->
+
+
+            <!-- viewjs-gallery -->
+            <section class="viewjs-gallery">
+
+
+                <figure>
+
+                    <ul>
+                        {% for ab in album %}
+                            <li>
+                                <a href="{{ ab.image.url }}" class="view" rel="photos">
+                                    {% thumbnail img.image "400x450" crop="center" as im %}
+                                    <img src="{{ im.url }}" width="{{ im.width }}" height="{{ im.height }}" alt="category-post">
+                                {% endthumbnail %}
+                                    <img src="{{ ab.image.url }}">
+                                </a>
+                            </li>
+                        {% endfor %}
+                    </ul>
+
+
+                </figure>
+
+            </section>
+            <!-- viewjs-gallery -->
+
+
+        </div>
+    </div>
+    </div>
+
+
+    </div>
+{% endblock %}
+
+{% block script %}
+
+{#    <script src="{% static 'js/fastclick.js' %}"></script>#}
+{#    <script src="{% static 'js/imagesloaded.pkgd.min.js' %}"></script>#}
+{#    <script src="{% static 'js/jquery.fluidbox/jquery.fluidbox.min.js' %}"></script>#}
+{#    <script src="{% static 'js/owl-carousel/owl.carousel.min.js' %}"></script>#}
+{#    <script src="{% static 'js/jquery.collagePlus/jquery.collagePlus.min.js' %}"></script>#}
+{#    <script src="{% static 'js/jquery.magnific-popup/jquery.magnific-popup.min.js' %}"></script>#}
+{#    <script src="{% static 'js/view.min9df2.js' %}?auto"></script>#}
+{#<script src="{% static 'js/slippry/slippry.min.js' %}"></script>#}
+{#    <script src="{% static 'js/main.js' %}"></script>#}
+{% endblock %}

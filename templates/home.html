@@ -1,0 +1,173 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load thumbnail %}
+    {% block link %}
+{#    <link rel="stylesheet" type="text/css" href="{% static 'js/jquery.fluidbox/fluidbox.css' %}">#}
+{#<link rel="stylesheet" type="text/css" href="{% static 'js/owl-carousel/owl.carousel.css' %}">#}
+{#<link rel="stylesheet" type="text/css" href="{% static 'js/photo-swipe/photoswipe.css' %}">#}
+{#<link rel="stylesheet" type="text/css" href="{% static 'js/photo-swipe/default-skin/default-skin.css' %}">#}
+{#<link rel="stylesheet" type="text/css" href="{% static 'js/jquery.magnific-popup/magnific-popup.css' %}">#}
+{#<link rel="stylesheet" type="text/css" href="{% static 'js/slippry/slippry.css' %}">#}
+
+    {% endblock %}
+{% block content %}
+    <div class="layout-full">
+
+
+        <!-- InstanceBeginEditable name="LayoutFullContent" -->
+
+
+        <!-- .hentry -->
+        <article class="page type-page hentry">
+
+
+            <!-- .entry-header -->
+            <!--<header class="entry-header">
+                <h1 class="entry-title">Home</h1>
+            </header>-->
+            <!-- .entry-header -->
+
+
+            <!-- .entry-content -->
+            <div class="entry-content">
+
+
+                <!-- intro -->
+                <div class="intro">
+
+                    <h2>
+
+                        Hi. I am a photographer<br>
+                        I capture
+
+                        <span class="rotate-words" data-interval="3000">
+                                            <span>life.</span>
+                                            <span>moments.</span>
+                                            <span>happiness.</span>
+                                            <span>emotions.</span>
+                                            <span>action.</span>
+                                            <span>impression.</span>
+                                            <span>beauty.</span>
+                                        </span>
+
+                    </h2>
+
+                </div>
+                <!-- indata-nav-text-prev="prev"tro -->
+
+
+                <!-- .owl-carousel -->
+                <div class="owl-carousel owl-loading" data-items="5" data-loop="true" data-center="true"
+                     data-mouse-drag="true" data-nav="true" data-dots="true" data-autoplay="true"
+                     data-autoplay-speed="500" data-autoplay-timeout="3000">
+{#                    data-nav-text-prev="prev"#}
+{#                     data-nav-text-next="next">#}
+                    {% for img in upload_list %}
+
+                        <div>
+                        {% thumbnail img.image "480x600" crop="center" as im %}
+                                    <img src="{{ im.url }}" width="{{ im.width }}" height="{{ im.height }}" alt="">
+                                {% endthumbnail %}
+{#                            <img src="{{ img.image.url }}" alt="slide" width="100px" height="100px">#}
+                        </div>
+                    {% endfor %}
+
+                </div>
+                <!-- .owl-carousel -->
+
+
+            </div>
+            <!-- entry-content -->
+
+        </article>
+        <!-- hentry -->
+
+        <hr>
+
+        <!-- .gallery-single -->
+        <div class="gallery-single">
+
+
+            <!-- entry-header -->
+            <header class="entry-header">
+                <h1 class="entry-title">CATEGORY</h1>
+            </header>
+            <!-- entry-header -->
+
+
+            <!-- .media-grid-wrap -->
+            <div class="media-grid-wrap">
+
+                <!-- .pw-gallery -->
+{#                <div class="mfp-gallery pw-collage pw-collage-loading" data-row-height="360"#}
+{#                     data-mobile-row-height="120" data-effect="effect-4">#}
+
+                    <div class="gallery-grid">
+
+
+                        {% for cat,img in zipped %}
+
+                            <!-- gallery-item -->
+                            <div class="masonry-item">
+                                <figure>
+                                    {% thumbnail img.image "500x700" crop="center" as im %}
+                                    <img src="{{ im.url }}" width="{{ im.width }}" height="{{ im.height }}" alt="category-post">
+                                {% endthumbnail %}
+{#                                    <img src="{{ img.image.url }}" alt="gallery-post"/>#}
+                                    <figcaption>
+                                        <h2 style="color: #0f6674">{{ cat.name }}</h2>
+                                        <a href="{% url 'core:category_detail' cat.slug %}">View more</a>
+                                    </figcaption>
+                                </figure>
+                            </div>
+                            <!-- gallery-item -->
+                        {% endfor %}
+
+
+                    </div>
+
+                    {#                            </div>#}
+                    <!-- .pw-gallery -->
+
+{#                </div>#}
+                <!-- .media-grid-wrap -->
+
+
+                <!-- .nav-single -->
+                <nav class="nav-single row">
+
+{#                    <div class="nav-previous col-xs-6">#}
+{#                        <h4>PREVIOUS</h4>#}
+{#                        <a href="gallery-single-video.html" rel="prev"><span class="meta-nav">←</span> PORTRAITS</a>#}
+{#                    </div>#}
+
+                    <div class="nav-next col-xs-6 pull-right">
+                        <h4>VIEW MORE</h4>
+                        <a href="{% url 'core:category' %}" rel="next">Category <span
+                                class="meta-nav">→</span></a>
+                    </div>
+
+                </nav>
+                <!-- .nav-single -->
+
+
+            </div>
+            <!-- .gallery-single -->
+
+
+            <!-- InstanceEndEditable -->
+
+
+        </div>
+    </div>
+{% endblock %}
+
+{% block script %}
+{#    <script src="{% static 'js/fastclick.js' %}"></script>#}
+{#    <script src="{% static 'js/imagesloaded.pkgd.min.js' %}"></script>#}
+{#    <script src="{% static 'js/jquery.fluidbox/jquery.fluidbox.min.js' %}"></script>#}
+{#    <script src="{% static 'js/owl-carousel/owl.carousel.min.js' %}"></script>#}
+{#    <script src="{% static 'js/jquery.collagePlus/jquery.collagePlus.min.js' %}"></script>#}
+{#    <script src="{% static 'js/jquery.magnific-popup/jquery.magnific-popup.min.js' %}"></script>#}
+{#    <script src="{% static 'js/main.js' %}"></script>#}
+{% endblock %}
